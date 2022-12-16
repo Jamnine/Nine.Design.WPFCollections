@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+	<UseWindowsForms>true</UseWindowsForms>
+	<ApplicationIcon>NineDesign.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="NineDesign.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="NineDesign.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nine.Design.Resource\Nine.Design.Resource.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="NineDesign.ico" />
+  </ItemGroup>
+
+</Project>

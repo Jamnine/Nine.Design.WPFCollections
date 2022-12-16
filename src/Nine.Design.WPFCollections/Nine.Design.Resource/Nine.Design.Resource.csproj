@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<RootNamespace>Nine.Design.Resource</RootNamespace>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
+	<UseWindowsForms>true</UseWindowsForms>
+	<UseWPF>true</UseWPF>
+	<LangVersion>10</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\btn\close_696969.png" />
+    <None Remove="images\btn\close_9ea0a2.png" />
+    <None Remove="images\btn\max_696969.png" />
+    <None Remove="images\btn\max_9ea0a2.png" />
+    <None Remove="images\btn\mini_696969.png" />
+    <None Remove="images\btn\mini_9ea0a2.png" />
+    <None Remove="images\logo\NineDesign.ico" />
+    <None Remove="images\logo\NineDesign.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\btn\close_696969.png" />
+    <Resource Include="images\btn\close_9ea0a2.png" />
+    <Resource Include="images\btn\max_696969.png" />
+    <Resource Include="images\btn\max_9ea0a2.png" />
+    <Resource Include="images\btn\mini_696969.png" />
+    <Resource Include="images\btn\mini_9ea0a2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\icon\muen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\logo\NineDesign.ico" />
+    <Resource Include="images\logo\NineDesign.png" />
+  </ItemGroup>
+
+</Project>

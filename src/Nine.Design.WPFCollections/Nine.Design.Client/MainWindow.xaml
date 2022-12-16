@@ -1,0 +1,227 @@
+﻿<Window x:Class="Nine.Design.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nine.Design.Client"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="320"
+        Height="800"
+        AllowsTransparency="True"
+        Background="{x:Null}"
+        Closed="Window_Closed"
+        Deactivated="Window_Deactivated"
+        Loaded="Window_Loaded"
+        MouseDown="Window_MouseDown"
+        ResizeMode="NoResize"
+        WindowStyle="None">
+    <!--  窗口四周阴影  -->
+    <Window.Effect>
+        <DropShadowEffect
+            BlurRadius="10"
+            Direction="0"
+            Opacity="0.7"
+            ShadowDepth="0"
+            Color="#FF4D4D4D" />
+    </Window.Effect>
+
+    <!--<Window.Resources>
+
+        <ResourceDictionary Source="pack://application:,,,/Nine.Design.Clientbase;" />
+
+    </Window.Resources>-->
+    <Grid x:Name="StartGrid" Margin="10">
+        <!--  外围Grid的动画事件  -->
+        <Grid.Resources>
+            <Storyboard x:Key="ExitTo" Timeline.DesiredFrameRate="300">
+                <DoubleAnimation
+                    SpeedRatio="6"
+                    Storyboard.TargetName="StartGrid"
+                    Storyboard.TargetProperty="Opacity"
+                    From="1"
+                    To="0"
+                    Duration="0:0:2" />
+            </Storyboard>
+            <Storyboard x:Key="StartTo" Timeline.DesiredFrameRate="300">
+                <DoubleAnimation
+                    x:Name="Startfill"
+                    SpeedRatio="6"
+                    Storyboard.TargetName="StartGrid"
+                    Storyboard.TargetProperty="Width"
+                    From="0"
+                    To="300"
+                    Duration="0:0:2" />
+                <DoubleAnimation
+                    SpeedRatio="6"
+                    Storyboard.TargetName="StartGrid"
+                    Storyboard.TargetProperty="Opacity"
+                    From="0"
+                    To="1"
+                    Duration="0:0:2" />
+            </Storyboard>
+        </Grid.Resources>
+        <Border
+            Background="#FFD4D4D4"
+            CornerRadius="15"
+            Opacity="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <!--  菜单栏分块  -->
+                <Border
+                    Grid.Row="0"
+                    Padding="5,0,15,0"
+                    Panel.ZIndex="999"
+                    Background="#ffffff"
+                    CornerRadius="15,15,0,0">
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="10"
+                            Opacity="0.5"
+                            ShadowDepth="0"
+                            Color="#80000000" />
+                    </Border.Effect>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <WrapPanel
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                            <Image
+                                Width="35"
+                                Height="35"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="/Nine.Design.Resource;component/images/logo/NineDesign.png" />
+                            <Label
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Content="Nine.Design"
+                                FontSize="16"
+                                FontWeight="Bold"
+                                Foreground="#575757">
+                                <!--<i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseDoubleClick">
+                                        <ndc:EventToCommand Command="{Binding TitleDoubleClickCommand}" CommandParameter="{Binding SelectedItem, ElementName=RegisterDay_ListBox}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>-->
+                            </Label>
+                        </WrapPanel>
+                        <Grid Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="10px" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel
+                                Grid.Column="0"
+                                HorizontalAlignment="Right"
+                                Orientation="Horizontal">
+                                <Border
+                                    Width="20"
+                                    Height="20"
+                                    CornerRadius="5">
+                                    <Border.Background>
+                                        <ImageBrush>
+                                            <ImageBrush.ImageSource>
+                                                <DrawingImage>
+                                                    <DrawingImage.Drawing>
+                                                        <ImageDrawing ImageSource="pack://application:,,,/Nine.Design.Resource;component/images/icon/muen.png" Rect="100,200,110,100" />
+                                                    </DrawingImage.Drawing>
+                                                </DrawingImage>
+                                            </ImageBrush.ImageSource>
+                                        </ImageBrush>
+                                    </Border.Background>
+                                    <!--<i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="MouseDown">
+                                            <ndc:EventToCommand Command="{Binding RoomsMouseDownClickCommand}" CommandParameter="{Binding SelectedItem, ElementName=RegisterDay_ListBox}" />
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>-->
+
+                                </Border>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    FontSize="12"
+                                    Foreground="#FFD8D8D8">
+                                    |
+                                </TextBlock>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                        <Grid Grid.Column="2">
+                            <Image
+                                x:Name="Mini_Img"
+                                Width="25"
+                                Height="25"
+                                Margin="0,12,50,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
+                                MouseDown="Mini_Img_MouseUp"
+                                MouseEnter="Mini_MouseEnter"
+                                MouseLeave="Mini_MouseLeave"
+                                Source="pack://application:,,,/Nine.Design.Resource;component/images/btn/mini_9ea0a2.png"
+                                ToolTip="最小化" />
+                            <Image
+                                x:Name="Max_Img"
+                                Width="25"
+                                Height="25"
+                                Margin="0,12,25,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
+                                MouseDown="Max_Img_MouseUp"
+                                MouseEnter="Max_MouseEnter"
+                                MouseLeave="Max_MouseLeave"
+                                Source="pack://application:,,,/Nine.Design.Resource;component/images/btn/max_9ea0a2.png"
+                                ToolTip="最大化"/>
+                            <Image
+                                x:Name="Exit_Img"
+                                Width="25"
+                                Height="25"
+                                Margin="0,12,0,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
+                                MouseDown="Exit_Img_MouseUp"
+                                MouseEnter="Exit_MouseEnter"
+                                MouseLeave="Exit_MouseLeave"
+                                Source="pack://application:,,,/Nine.Design.Resource;component/images/btn/close_9ea0a2.png"
+                                ToolTip="关闭" />
+                        </Grid>
+                    </Grid>
+                </Border>
+                <Grid Grid.Row="1" Visibility="Hidden">
+                    <TextBox
+                        x:Name="ConsoleTextBox"
+                        Grid.Row="2"
+                        Width="260"
+                        BorderBrush="#FFAFC0F5"
+                        FontFamily="Futura"
+                        FontSize="22"
+                        IsReadOnly="True"
+                        Text="{Binding Msg}"
+                        TextAlignment="Left"
+                        TextBlock.LineHeight="22"
+                        TextChanged="ConsoleTextBox_TextChanged"
+                        TextWrapping="Wrap">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="9" />
+                                <Setter Property="BorderBrush" Value="#c1d0dc" />
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
