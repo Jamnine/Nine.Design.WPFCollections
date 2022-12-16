@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Nine.Design.Client/1.0.0": {
+        "dependencies": {
+          "Nine.Design.Resource": "1.0.0"
+        },
+        "runtime": {
+          "Nine.Design.Client.dll": {}
+        }
+      },
+      "Nine.Design.Resource/1.0.0": {
+        "runtime": {
+          "Nine.Design.Resource.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Nine.Design.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Nine.Design.Resource/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
